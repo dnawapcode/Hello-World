@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Deshmukh - Product Manager Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Off-white background */
+        }
+        .section {
+            scroll-margin-top: 80px;
+        }
+        .heading-font {
+            font-family: 'Caveat', cursive;
+        }
+        .card {
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 0.5rem;
+            box-shadow: 6px 6px 0px black;
+            transition: all 0.2s ease-in-out;
+        }
+        .card:hover {
+            box-shadow: 8px 8px 0px black;
+            transform: translate(-2px, -2px);
+        }
+        .word-cloud span {
+            display: inline-block;
+            margin: 0.25rem 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b-2 border-black">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <div>
+                <a href="resume.pdf" download="Pawan_Deshmukh_Resume.pdf" class="bg-white hover:bg-gray-100 text-black font-semibold px-5 py-2 border-2 border-black transition-colors">Download Resume</a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="font-semibold hover:underline transition-all">About</a>
+                <a href="#portfolio" class="font-semibold hover:underline transition-all">Portfolio</a>
+                <button data-modal-trigger class="bg-black hover:bg-gray-800 text-white font-semibold px-5 py-2 border-2 border-black transition-colors">Contact Me</button>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#about" class="block py-2 font-semibold text-center hover:bg-gray-100 mobile-menu-link">About</a>
+            <a href="#portfolio" class="block py-2 font-semibold text-center hover:bg-gray-100 mobile-menu-link">Portfolio</a>
+            <button data-modal-trigger class="w-full mt-2 bg-black text-white font-semibold text-center px-4 py-2">Contact Me</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="about" class="section py-16">
+            <div class="card p-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="w-full h-80 bg-gray-200 border-2 border-black flex items-center justify-center">
+                        <img src="assets/hero-image.png" alt="A placeholder image for your photo" class="object-cover w-full h-full"/>
+                    </div>
+                    <div class="text-left">
+                        <h1 class="heading-font text-6xl md:text-7xl font-bold mb-2">Hello, I'm Pawan.</h1>
+                        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Product Manager</h2>
+                        <p class="mb-4 text-gray-600">
+                            With 20 years in the tech industry, spanning 3D applications to e-commerce, I’ve built expertise in designing and scaling complex, highly available products.
+                        </p>
+                        <div class="mt-6 flex space-x-4">
+                            <!-- Social links -->
+                             <a href="https://github.com/dnawapcode" aria-label="GitHub Profile" class="text-gray-800 hover:text-black transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                             <a href="https://www.linkedin.com/in/pawan-deshmukh-18524a13/" aria-label="LinkedIn Profile" class="text-gray-800 hover:text-black transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="section py-16 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-8">Awards & Recognition</h2>
+            <div class="card p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <!-- Award 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Product excellence award 2023</h3>
+                            <p class="text-gray-600">For automating process of experiment results & analysis</p>
+                        </div>
+                    </div>
+                    <!-- Award 2 -->
+                    <div class="flex items-start space-x-4">
+                         <div class="flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Microsoft Hackathon 2022 - CMD Award</h3>
+                            <p class="text-gray-600">For solving one of the biggest pain points of M365 admins</p>
+                        </div>
+                    </div>
+                    <!-- Award 3 -->
+                    <div class="flex items-start space-x-4">
+                         <div class="flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Exceptional Impact for 2025</h3>
+                            <p class="text-gray-600">Exceeded all expectations for OKRs set for FY 25.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Word Cloud Section -->
+        <section class="section py-16 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-8">Areas of expertise</h2>
+            <div class="card p-8 word-cloud">
+                <span style="font-size: 2.5rem;" class="font-bold">E-Commerce</span>
+                <span style="font-size: 1.5rem;" class="text-gray-600">SaaS</span>
+                <span style="font-size: 2.2rem;" class="font-semibold">Recommendation systems</span>
+                <span style="font-size: 2.5rem;" class="font-semibold">Agentic AI applications</span>
+                <span style="font-size: 1.8rem;">User Experience</span>
+                <span style="font-size: 2.8rem;" class="font-bold">Supply chain</span>
+                <span style="font-size: 1.4rem;" class="text-gray-700">Enterprise Software</span>
+                <span style="font-size: 2.0rem;">Product Strategy</span>
+                <span style="font-size: 1.6rem;" class="font-semibold">B2B</span>
+                <span style="font-size: 2.4rem;">Cloud Computing</span>
+                <span style="font-size: 1.2rem;">3D Applications</span>
+            </div>
+        </section>
+        
+        <!-- Companies Section -->
+        <section class="section py-16 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-8">Where I've Worked</h2>
+            <div class="card p-8">
+                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                    <img src="assets/microsoft-logo.png" alt="Microsoft" class="mx-auto"/>
+                    <img src="assets/tatacliq-logo.png" alt="TataCliQ" class="mx-auto"/>
+                    <img src="assets/geomtric-logo.png" alt="Geometric" class="mx-auto"/>
+                    <img src="assets/wipro-logo.png" alt="Wipro" class="mx-auto"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alma Mater Section -->
+        <section class="section py-16 text-center">
+             <h2 class="heading-font text-5xl font-bold mb-8">Alma Mater</h2>
+            <div class="card p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center">
+                        <img src="assets/isb-logo.png" alt="University Logo" class="mx-auto mb-4"/>
+                        <h3 class="text-xl font-bold">Indian School of Business (ISB), Hyderabad</h3>
+                        <p class="text-gray-600">MBA</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="assets/mgit-logo.png" alt="University Logo" class="mx-auto mb-4"/>
+                        <h3 class="text-xl font-bold">Mahatma Gandhi Institute of Technology (MGIT), Hyderabad</h3>
+                        <p class="text-gray-600">Bachelor of Technology, Computer science and information technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section py-16">
+            <h2 class="heading-font text-5xl font-bold mb-8 text-center">Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card overflow-hidden">
+                    <div class="w-full h-48 bg-gray-200 border-b-2 border-black flex items-center justify-center">
+                        <img src="https://placehold.co/600x300/e5e7eb/111827?text=Project+(600x300)" alt="Placeholder for Project 1" class="object-cover w-full h-full"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Project Title 1</h3>
+                        <p class="text-gray-600 mb-4">A brief description of your project. Highlight the problem it solves and the technologies used.</p>
+                        <div class="flex space-x-2">
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">C++</span>
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">Qt</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                 <div class="card overflow-hidden">
+                    <div class="w-full h-48 bg-gray-200 border-b-2 border-black flex items-center justify-center">
+                        <img src="https://placehold.co/600x300/e5e7eb/111827?text=Project+(600x300)" alt="Placeholder for Project 2" class="object-cover w-full h-full"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Project Title 2</h3>
+                        <p class="text-gray-600 mb-4">You can describe another one of your past projects here. What was your role? What were the key challenges?</p>
+                        <div class="flex space-x-2">
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">C++</span>
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">Boost</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                 <div class="card overflow-hidden">
+                    <div class="w-full h-48 bg-gray-200 border-b-2 border-black flex items-center justify-center">
+                        <img src="https://placehold.co/600x300/e5e7eb/111827?text=Portfolio+(600x300)" alt="Placeholder for this Portfolio project" class="object-cover w-full h-full"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">This Portfolio Website</h3>
+                        <p class="text-gray-600 mb-4">My first project to dive into modern web development and create a home for my work online.</p>
+                         <div class="flex flex-wrap gap-2">
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">HTML</span>
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">TailwindCSS</span>
+                           <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full border border-black">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="section py-16 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-8">After Hours</h2>
+             <div class="card p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Hobby 1 -->
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-3 text-gray-800"><path d="M3 20h18L12 4z" /><path d="M12 4l-3.5 6H12l3.5 6-3.5-4-3.5 4" /></svg>
+                        <h3 class="text-xl font-bold">High Altitude Trekking</h3>
+                        <p class="text-gray-600">Exploring himalayan ranges and pushing my limits in nature.</p>
+                    </div>
+                    <!-- Hobby 2 -->
+                    <div class="flex flex-col items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-3 text-gray-800"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <h3 class="text-xl font-bold">Part-time Coding</h3>
+                        <p class="text-gray-600">Building fun projects and learning new technologies.</p>
+                    </div>
+                    <!-- Hobby 3 -->
+                    <div class="flex flex-col items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-3 text-gray-800"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        <h3 class="text-xl font-bold">Reading Books</h3>
+                        <p class="text-gray-600">Mostly non-fiction, tech focused</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section py-16 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-4">Get In Touch</h2>
+            <p class="text-gray-600 mb-8 max-w-lg mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
+            
+            <div class="mt-8">
+                <button data-modal-trigger class="inline-block bg-black hover:bg-gray-800 text-white font-bold px-10 py-4 border-2 border-black transition-colors text-lg">
+                    Say Hello
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 border-t-2 border-black mt-12">
+        <p class="text-gray-500">&copy; 2025 Pawan Deshmukh. All rights reserved.</p>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div id="modal-content" class="card max-w-md w-full p-8 text-center relative">
+            <button id="modal-close" class="absolute top-4 right-4 text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 class="heading-font text-4xl font-bold mb-4">Contact Info</h2>
+            <div class="space-y-4">
+                 <a href="mailto:your.email@example.com" class="block font-semibold text-lg hover:underline">pawan.deshmukh@gmail.com</a>
+                 <a href="#" class="inline-block bg-black hover:bg-gray-800 text-white font-semibold px-6 py-2 border-2 border-black transition-colors">
+                    LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Contact Modal Logic ---
+        const contactModal = document.getElementById('contact-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalButton = document.getElementById('modal-close');
+        const openModalButtons = document.querySelectorAll('[data-modal-trigger]');
+
+        const openModal = () => {
+            contactModal.classList.remove('hidden');
+        }
+
+        const closeModal = () => {
+            contactModal.classList.add('hidden');
+        }
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Stop parent handlers
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                openModal();
+            });
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        // Close modal if clicking outside the modal content
+        contactModal.addEventListener('click', (event) => {
+            if (event.target === contactModal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
