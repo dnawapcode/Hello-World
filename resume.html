@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Deshmukh - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --term-bg: #0d1117;
+            --term-fg: #00ff00;
+            --term-blue: #58a6ff;
+            --term-gray: #8b949e;
+            --font-stack: 'Fira Code', 'Courier New', Courier, monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--term-bg);
+            color: var(--term-fg);
+            font-family: var(--font-stack);
+            font-size: 14px;
+            line-height: 1.4;
+            padding: 2rem;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--term-blue);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .prompt {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .prompt span.user {
+            color: var(--term-fg);
+        }
+
+        .output {
+            color: var(--term-gray);
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 1px solid #30363d;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--term-fg);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            color: var(--term-gray);
+            line-height: 1.6;
+        }
+
+        .job-title {
+            color: var(--term-fg);
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .company {
+            color: var(--term-blue);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+            display: flex;
+        }
+
+        li::before {
+            content: "> ";
+            color: var(--term-fg);
+            margin-right: 0.5rem;
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        @media print {
+            @page {
+                margin: 0.5in;
+                size: letter;
+            }
+            body {
+                background-color: white;
+                color: black;
+                padding: 0;
+                font-size: 10pt;
+            }
+            .resume-container {
+                max-width: 100%;
+            }
+            .output {
+                color: #222;
+                border-left: 1px solid #ccc;
+                margin-bottom: 0.5rem;
+            }
+            .prompt {
+                color: #555;
+                font-weight: bold;
+                margin-top: 0.5rem;
+                margin-bottom: 0.2rem;
+            }
+            .prompt span.user {
+                color: #0e4429;
+            }
+            h1 {
+                color: black;
+                font-size: 1.5rem;
+                margin-bottom: 0.2rem;
+            }
+            .job-title {
+                color: black;
+            }
+            .company, a {
+                color: #0366d6;
+            }
+            li::before {
+                color: black;
+            }
+            .contact-info {
+                color: #444;
+            }
+            .header {
+                margin-bottom: 1rem;
+            }
+            body {
+                line-height: 1.3;
+            }
+            * {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="prompt"><span class="user">system@monitor:~$</span> whoami</div>
+            <div class="output">
+                <h1>PAWAN DESHMUKH</h1>
+                <div class="contact-info">
+                    Email: <a href="mailto:pawan.deshmukh@gmail.com">pawan.deshmukh@gmail.com</a> | 
+                    Phone: +91-7387123728 <br>
+                    LinkedIn: <a href="https://www.linkedin.com/in/pawan-deshmukh-18524a13/">linkedin.com/in/pawan-deshmukh-18524a13</a> | 
+                    Web: <a href="https://dnawapcode.github.io/Hello-World/">dnawapcode.github.io/Hello-World</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="section">
+            <div class="prompt"><span class="user">system@monitor:~$</span> cat about.txt</div>
+            <div class="output">
+                Product Manager with 20+ years living at the intersection of deep product strategy and complex systems architecture. Adept at conceptualizing and scaling both consumer and enterprise products. My eCommerce experience at TataCLiQ involved breaking down monolithic systems to enable massive logistical and B2B growth, while my recent work at Microsoft focuses on driving multi-tenant AI experiences and platform scale for millions of users.
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <div class="prompt"><span class="user">system@monitor:~$</span> history | grep experience</div>
+            <div class="output">
+                
+                <div class="job" style="margin-bottom: 1.5rem;">
+                    <div class="job-title">
+                        <span>Sr Product Manager, <span class="company">Microsoft</span></span>
+                        <span>Mar 2022 - Current</span>
+                    </div>
+                    <ul>
+                        <li><div><strong>Growth:</strong> Added +550K M365 seats by enhancing Sales Advisor (sales-recommendation engine), leading to $60M in additional revenue.</div></li>
+                        <li><div><strong>Focus Strategy:</strong> Authored strategy paper proving 3x revenue potential via "Large Partner" prioritization.</div></li>
+                        <li><div><strong>AI Innovation:</strong> Drove GPT-powered contextual self-help in Support Central leading to $20M bottom-line + top-line impact.</div></li>
+                        <li><div><strong>AI Tooling:</strong> Built "PM-Newsletter-Agent" that autonomously compiles and sends stakeholder updates for Microsoft Hackathon 2025.</div></li>
+                    </ul>
+                </div>
+
+                <div class="job" style="margin-bottom: 1.5rem;">
+                    <div class="job-title">
+                        <span>Director, Product Management, <span class="company">TataCLiQ.com</span></span>
+                        <span>Nov 2016 - Feb 2022</span>
+                    </div>
+                    <ul>
+                        <li><div><strong>Logistics Innovation:</strong> Conceptualized and launched "Automated Store Priority" feature, leading to a 15% increase in zonal and local order contributions (Patent Filed).</div></li>
+                        <li><div><strong>Customer Experience:</strong> Launched "Estimated Delivery Date", improving accuracy from 25% to 52%.</div></li>
+                        <li><div><strong>B2B Growth:</strong> Launched "Purchase with GSTIN" product that added $8M (60 crore INR) to annual revenues.</div></li>
+                        <li><div><strong>Serviceability:</strong> Increased product availability by 20% by revamping serviceability and inventory logic.</div></li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">
+                        <span>Sr. Business Analyst, <span class="company">Geometric Ltd</span></span>
+                        <span>Jan 2012 - Apr 2015</span>
+                    </div>
+                    <ul>
+                        <li><div><strong>Innovation:</strong> Co-invented "Constrained Optimization of Bracket Placement Algorithm", reducing design operators' turnaround times by 70% (USPTO: US10098709B1).</div></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="prompt"><span class="user">system@monitor:~$</span> cat education.json</div>
+            <div class="output">
+                <div class="education-item">
+                    <span>PGP in Management, <strong>Indian School of Business (ISB)</strong></span>
+                    <span>Apr 2015 - Apr 2016</span>
+                </div>
+                <div class="education-item">
+                    <span>B.Tech in Computer Science, <strong>MGIT, Hyderabad</strong></span>
+                    <span>Sep 2001 - Apr 2005</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
