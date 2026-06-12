@@ -11,7 +11,8 @@
     <!-- Replaced broken JS widget with live SVG -->
 </head>
 <body>
-    <div class="terminal-container">
+    <div class="page-wrapper">
+        <div class="terminal-container">
         
         <!-- Header / Profile -->
         <div class="profile-block">
@@ -119,6 +120,40 @@
             <div class="prompt-line mt-4">
                 <span class="user-host">pawan@microsoft:~$</span> <span class="cursor">_</span>
             </div>
+        </div>
+
+        <!-- Right Side Feed -->
+        <div class="feed-container">
+            <div class="prompt-line">
+                <span class="user-host">system@monitor:~$</span> <span class="command">tail -f /var/log/commits.log</span>
+            </div>
+            <div class="output" id="commit-feed">
+                <p>Loading live commit feed...</p>
+            </div>
+            <script>
+                fetch('https://api.github.com/repos/dnawapcode/Hello-World/commits?per_page=5')
+                    .then(response => response.json())
+                    .then(data => {
+                        const feed = document.getElementById('commit-feed');
+                        feed.innerHTML = '';
+                        if (Array.isArray(data)) {
+                            data.forEach(commit => {
+                                const date = new Date(commit.commit.author.date).toLocaleDateString();
+                                const msg = commit.commit.message.split('\n')[0];
+                                const hash = commit.sha.substring(0, 7);
+                                const item = document.createElement('div');
+                                item.style.marginBottom = '1rem';
+                                item.innerHTML = `<span style="color: var(--term-blue);">[${date}]</span> <span style="color: var(--term-gray);">commit <a href="${commit.html_url}" target="_blank" style="color: var(--term-gray); text-decoration: underline;">${hash}</a></span><br/>> <span style="color: var(--term-fg);">${msg}</span>`;
+                                feed.appendChild(item);
+                            });
+                        } else {
+                            feed.innerHTML = '<p>Error loading commits.</p>';
+                        }
+                    })
+                    .catch(err => {
+                        document.getElementById('commit-feed').innerHTML = '<p>Feed offline.</p>';
+                    });
+            </script>
         </div>
     </div>
 </body>
