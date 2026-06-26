@@ -157,23 +157,47 @@
                 <p>Loading live commit feed...</p>
             </div>
             <script>
-                fetch('https://api.github.com/repos/dnawapcode/Hello-World/commits?per_page=5')
+                fetch('https://api.github.com/users/dnawapcode/events/public')
                     .then(response => response.json())
-                    .then(data => {
+                    .then(events => {
                         const feed = document.getElementById('commit-feed');
                         feed.innerHTML = '';
-                        if (Array.isArray(data)) {
-                            data.forEach(commit => {
-                                const date = new Date(commit.commit.author.date).toLocaleDateString();
-                                const msg = commit.commit.message.split('\n')[0];
-                                const hash = commit.sha.substring(0, 7);
-                                const item = document.createElement('div');
-                                item.style.marginBottom = '1rem';
-                                item.innerHTML = `<span style="color: var(--term-blue);">[${date}]</span> <span style="color: var(--term-gray);">commit <a href="${commit.html_url}" target="_blank" style="color: var(--term-gray); text-decoration: underline;">${hash}</a></span><br/>> <span style="color: var(--term-fg);">${msg}</span>`;
-                                feed.appendChild(item);
+                        if (Array.isArray(events)) {
+                            // Extract commits from PushEvents
+                            let commits = [];
+                            events.forEach(event => {
+                                if (event.type === 'PushEvent' && event.payload && event.payload.commits) {
+                                    event.payload.commits.forEach(c => {
+                                        commits.push({
+                                            repo: event.repo.name,
+                                            sha: c.sha,
+                                            message: c.message,
+                                            url: c.url.replace('api.github.com/repos', 'github.com').replace('/commits/', '/commit/'),
+                                            date: event.created_at
+                                        });
+                                    });
+                                }
                             });
+                            
+                            // Take top 5 recent commits
+                            commits = commits.slice(0, 5);
+
+                            if (commits.length > 0) {
+                                commits.forEach(commit => {
+                                    const date = new Date(commit.date).toLocaleDateString();
+                                    const msg = commit.message.split('\n')[0];
+                                    const hash = commit.sha.substring(0, 7);
+                                    const repoName = commit.repo.split('/')[1] || commit.repo;
+                                    const item = document.createElement('div');
+                                    item.style.marginBottom = '1rem';
+                                    item.innerHTML = `<span style="color: var(--term-blue);">[${date}]</span> <span style="color: var(--term-gray);">commit <a href="${commit.url}" target="_blank" style="color: var(--term-gray); text-decoration: underline;">${hash}</a> in ${repoName}</span><br/>> <span style="color: var(--term-fg);">${msg}</span>`;
+                                    feed.appendChild(item);
+                                });
+                            } else {
+                                feed.innerHTML = '<p>No recent commits found.</p>';
+                            }
                         } else {
-                            feed.innerHTML = '<p>Error loading commits.</p>';
+                            feed.innerHTML = '<p>Error loading commits. (Rate limit?)</p>';
                         }
                     })
                     .catch(err => {
