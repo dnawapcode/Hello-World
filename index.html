@@ -151,59 +151,19 @@
             </div>
 
             <div class="prompt-line">
-                <span class="user-host">system@monitor:~$</span> <span class="command">tail -f /var/log/commits.log</span>
+                <span class="user-host">system@monitor:~$</span> <span class="command">cat /var/medium/articles.txt</span>
             </div>
-            <div class="output" id="commit-feed">
-                <p>Loading live commit feed...</p>
-            </div>
-            <script>
-                fetch('https://api.github.com/users/dnawapcode/events/public')
-                    .then(response => response.json())
-                    .then(events => {
-                        const feed = document.getElementById('commit-feed');
-                        feed.innerHTML = '';
-                        if (Array.isArray(events)) {
-                            // Extract commits from PushEvents
-                            let commits = [];
-                            events.forEach(event => {
-                                if (event.type === 'PushEvent' && event.payload && event.payload.commits) {
-                                    event.payload.commits.forEach(c => {
-                                        commits.push({
-                                            repo: event.repo.name,
-                                            sha: c.sha,
-                                            message: c.message,
-                                            url: c.url.replace('api.github.com/repos', 'github.com').replace('/commits/', '/commit/'),
-                                            date: event.created_at
-                                        });
-                                    });
-                                }
-                            });
-                            
-                            // Take top 5 recent commits
-                            commits = commits.slice(0, 5);
+            <div class="output">
+                <div style="margin-bottom: 1.5rem;">
+                    <a href="https://medium.com/design-bootcamp/metric-modeling-for-product-managers-a0c6c9ab4d4a" target="_blank" style="color: var(--term-blue); text-decoration: underline; font-weight: bold; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">Metric Modeling for Product Managers</a>
+                    <p style="color: var(--term-gray); line-height: 1.4;">A deep dive into value capture, identifying chasms where value is lost, and taking a hands-on, experimental approach to data-driven decision making using SQL and Excel.</p>
+                </div>
 
-                            if (commits.length > 0) {
-                                commits.forEach(commit => {
-                                    const date = new Date(commit.date).toLocaleDateString();
-                                    const msg = commit.message.split('\n')[0];
-                                    const hash = commit.sha.substring(0, 7);
-                                    const repoName = commit.repo.split('/')[1] || commit.repo;
-                                    const item = document.createElement('div');
-                                    item.style.marginBottom = '1rem';
-                                    item.innerHTML = `<span style="color: var(--term-blue);">[${date}]</span> <span style="color: var(--term-gray);">commit <a href="${commit.url}" target="_blank" style="color: var(--term-gray); text-decoration: underline;">${hash}</a> in ${repoName}</span><br/>> <span style="color: var(--term-fg);">${msg}</span>`;
-                                    feed.appendChild(item);
-                                });
-                            } else {
-                                feed.innerHTML = '<p>No recent commits found.</p>';
-                            }
-                        } else {
-                            feed.innerHTML = '<p>Error loading commits. (Rate limit?)</p>';
-                        }
-                    })
-                    .catch(err => {
-                        document.getElementById('commit-feed').innerHTML = '<p>Feed offline.</p>';
-                    });
-            </script>
+                <div style="margin-bottom: 1rem;">
+                    <a href="https://medium.com/tata-cliq-tech-blog/e-commerce-and-serviceability-yet-another-story-of-breaking-down-the-monolith-at-tatacliq-dc34b86d5c16" target="_blank" style="color: var(--term-blue); text-decoration: underline; font-weight: bold; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">Breaking Down the Monolith at TataCLiQ</a>
+                    <p style="color: var(--term-gray); line-height: 1.4;">An architectural and product journey exploring how we revamped serviceability and inventory calculation logic to increase product availability and massively scale logistics.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
