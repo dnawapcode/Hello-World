@@ -24,8 +24,8 @@
             background-color: #ffffff;
             color: var(--text-color);
             font-family: 'Open Sans', Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 13.5px;
+            line-height: 1.4;
             padding: 2rem;
         }
 
@@ -43,57 +43,81 @@
             text-decoration: underline;
         }
 
+        header {
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+
         h1 {
             color: var(--primary-color);
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.2rem;
+            text-transform: uppercase;
         }
 
-        h2.section-header {
-            color: var(--accent-color);
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 1.1rem;
             font-weight: 600;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 0.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            text-transform: capitalize;
+            color: #586069;
+            margin-bottom: 0.6rem;
         }
 
         .contact-info {
             color: #586069;
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .contact-info span {
-            margin-right: 0.8rem;
+        h2.section-header {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .summary {
-            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            background: #f6f8fa;
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .expertise {
+            text-align: center;
+            line-height: 1.6;
+            color: #24292e;
         }
 
         .job {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .job-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.05rem;
-            color: var(--primary-color);
-        }
-
-        .company {
-            font-weight: 400;
             color: var(--primary-color);
         }
 
@@ -103,40 +127,21 @@
             font-weight: 600;
         }
 
-        .job-summary {
-            margin-bottom: 0.5rem;
+        .job-subtitle {
+            font-weight: 600;
+            color: #586069;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
         }
-
-        .responsibility-grid {
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin: 1rem 0;
-            padding: 0 1rem;
-        }
-
-        .responsibility-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 80px;
-        }
-
-        .responsibility-item i {
-            font-size: 1.8rem;
-            color: var(--primary-color);
+        
+        .job-desc {
             margin-bottom: 0.4rem;
         }
 
-        .responsibility-item span {
-            font-size: 0.85rem;
-            line-height: 1.2;
-        }
-
-        .key-initiatives {
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: var(--primary-color);
+        .selected-impact {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
         }
 
         ul {
@@ -145,45 +150,43 @@
         }
         
         li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
         
-        .education-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.3rem;
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        .certs-hobbies {
-            margin-top: 0.5rem;
+        .education-item, .patent-item {
+            margin-bottom: 0.4rem;
         }
 
         @media print {
             @page {
-                margin: 0.25in 0.3in;
+                margin: 0.3in 0.4in;
                 size: letter;
             }
             body {
                 padding: 0;
-                font-size: 11pt;
+                font-size: 10.5pt;
             }
             .resume-container {
                 max-width: 100%;
             }
-            h1 {
-                font-size: 1.8rem;
-            }
-            .contact-info {
-                margin-bottom: 1rem;
-            }
             h2.section-header {
-                margin-top: 1rem;
-            }
-            * {
-                page-break-inside: avoid;
+                margin-top: 0.8rem;
+                margin-bottom: 0.4rem;
             }
             .job {
                 margin-bottom: 0.8rem;
+            }
+            .highlights {
+                padding: 0.4rem;
+            }
+            * {
+                page-break-inside: avoid;
             }
         }
     </style>
@@ -194,17 +197,36 @@
         <!-- Header -->
         <header>
             <h1>Pawan Deshmukh</h1>
+            <div class="subtitle">Principal Product Leader • AI Platforms • Enterprise SaaS • Growth</div>
             <div class="contact-info">
                 <span><i class="fa-solid fa-envelope"></i> <a href="mailto:pawan.deshmukh@gmail.com">pawan.deshmukh@gmail.com</a></span>
                 <span><i class="fa-solid fa-phone"></i> +91-7387123728</span>
-                <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/pawan-deshmukh-18524a13/">linkedin.com/in/pawan-deshmukh-18524a13</a></span>
-                <span><i class="fa-solid fa-globe"></i> <a href="https://dnawapcode.github.io/Hello-World/">dnawapcode.github.io/Hello-World</a></span>
+                <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/pawan-deshmukh-18524a13/">LinkedIn</a></span>
+                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/dnawapcode">GitHub</a></span>
             </div>
         </header>
 
-        <!-- About -->
+        <!-- Executive Profile -->
+        <h2 class="section-header">Executive Profile</h2>
         <div class="summary">
-            Product Manager with 20+ years of experience at the forefront of AI adoption, building agent management products for enterprises, and scaling consumer tech products that drive efficiency in eCommerce operations. Track record of breaking down monolithic systems to enable B2B and logistical growth at TataCLiQ, and driving multi-tenant AI platforms at Microsoft.
+            Product leader with 20+ years of experience building AI-native platforms, enterprise SaaS products, and large-scale commerce systems. Proven track record of turning emerging technologies into measurable business outcomes—from generating $80M+ in revenue impact and leading enterprise AI initiatives at Microsoft to modernizing Tata CLiQ's commerce platform that unlocked B2B growth and logistics scale. Combines deep technical expertise with product strategy to identify high-leverage opportunities, align executive stakeholders, and build products that customers adopt and businesses depend on.
+        </div>
+
+        <!-- Career Highlights -->
+        <h2 class="section-header">Career Highlights</h2>
+        <div class="highlights">
+            <span><strong>$80M+</strong> Business Impact</span>
+            <span><strong>550K</strong> M365 Seats Added</span>
+            <span><strong>2</strong> Patents</span>
+            <span><strong>20+</strong> Years Building Products</span>
+            <span><strong>6 PMs</strong> Led</span>
+            <span><strong>3×</strong> Partner Growth Strategy</span>
+        </div>
+
+        <!-- Core Expertise -->
+        <h2 class="section-header">Core Expertise</h2>
+        <div class="expertise">
+            AI Product Strategy &bull; Agentic AI &bull; Enterprise SaaS &bull; Platform Products &bull; Product Vision &bull; Marketplace Platforms &bull; Growth Strategy &bull; B2B Commerce &bull; Supply Chain &bull; Partner Ecosystems &bull; Platform Modernization &bull; Product Leadership
         </div>
 
         <!-- Experience -->
@@ -212,72 +234,95 @@
         
         <div class="job">
             <div class="job-header">
-                <div class="job-title">Sr Product Manager, <span class="company">Microsoft</span></div>
-                <div class="job-date">Mar 2022 - Present</div>
+                <div class="job-title">Microsoft</div>
+                <div class="job-date">Mar 2022 – Present</div>
             </div>
-            
+            <div class="job-subtitle">Senior Product Manager</div>
+            <div class="job-desc">
+                Leading AI product strategy across enterprise support, partner growth, and agent platform initiatives serving Microsoft 365 customers worldwide.
+            </div>
+            <div class="selected-impact">Selected Impact</div>
             <ul>
-                <li><strong>AI Leadership:</strong> Built a multi-tenant experience for "Agent365," leading it from an initial prototype to private preview and securing executive funding.</li>
-                <li><strong>Growth:</strong> Added +550K M365 seats by enhancing Sales Advisor (sales-recommendation engine), leading to $60M in additional revenue.</li>
-                <li><strong>Focus Strategy:</strong> Authored strategy paper proving 3x revenue potential via "Large Partner" prioritization.</li>
-                <li><strong>AI Innovation:</strong> Drove GPT-powered contextual self-help in Support Central leading to $20M bottom-line + top-line impact.</li>
-                <li><strong>AI Tooling:</strong> Built "PM-Newsletter-Agent" that autonomously compiles and sends stakeholder updates for Microsoft Hackathon 2025.</li>
+                <li>Built Microsoft's multi-tenant <strong>Agent365</strong> platform from concept to executive-funded private preview, establishing the foundation for enterprise agent experiences.</li>
+                <li>Increased Microsoft 365 adoption by <strong>550,000 paid seats</strong>, generating <strong>$60M</strong> in incremental revenue through AI-powered sales recommendations.</li>
+                <li>Created GPT-powered contextual support experiences that delivered <strong>$20M</strong> in measurable business impact by improving customer self-service and reducing support dependency.</li>
+                <li>Defined a partner growth strategy that identified a <strong>3× revenue opportunity</strong>, influencing investment priorities for Microsoft's large partner ecosystem.</li>
+                <li>Developed AI-powered internal productivity tooling that automated stakeholder communications and showcased practical enterprise AI adoption.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div class="job-title">Director, Product Management, <span class="company">TataCLiQ.com</span></div>
-                <div class="job-date">Nov 2016 - Feb 2022</div>
+                <div class="job-title">Tata CLiQ</div>
+                <div class="job-date">Nov 2016 – Feb 2022</div>
             </div>
-            
-            <div class="job-summary">
-                Led a team of 6 Product Managers to develop product vision and strategy for supply chain and seller experience area, managing portfolio of products such as order management system and SellerZone- interface built for 3500+ seller partners to operate and scale their business.
+            <div class="job-subtitle">Director, Product Management</div>
+            <div class="job-desc">
+                Owned product strategy for marketplace operations, seller platforms, and supply chain systems powering one of India's fastest-growing eCommerce businesses. Led a team of six Product Managers responsible for products used by over 3,500 sellers.
             </div>
-            
+            <div class="selected-impact">Selected Impact</div>
             <ul>
-                <li><strong>Logistics Innovation:</strong> Conceptualized and launched "Automated Store Priority" feature, leading to a 15% increase in zonal and local order contributions (Patent Filed).</li>
-                <li><strong>Customer Experience:</strong> Launched "Estimated Delivery Date", improving accuracy from 25% to 52%.</li>
-                <li><strong>B2B Growth:</strong> Launched "Purchase with GSTIN" product that added $8M (60 crore INR) to annual revenues.</li>
-                <li><strong>Serviceability:</strong> Increased product availability by 20% by revamping serviceability and inventory logic.</li>
+                <li>Led platform modernization initiatives that enabled large-scale B2B expansion while improving operational efficiency across logistics and marketplace operations.</li>
+                <li>Launched <strong>Purchase with GSTIN</strong>, generating <strong>₹60 Cr ($8M)</strong> in annual B2B revenue.</li>
+                <li>Filed a patent for an intelligent logistics prioritization engine that increased zonal and local order fulfillment by <strong>15%</strong>.</li>
+                <li>Improved delivery promise accuracy from <strong>25% to 52%</strong>, creating a significantly better customer experience.</li>
+                <li>Increased product availability by <strong>20%</strong> through redesign of inventory and serviceability architecture.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div class="job-title">Sr. Business Analyst, <span class="company">Geometric Ltd</span></div>
-                <div class="job-date">Jan 2012 - Apr 2015</div>
+                <div class="job-title">Earlier Experience</div>
             </div>
-            <ul>
-                <li><strong>Innovation:</strong> Co-invented "Constrained Optimization of Bracket Placement Algorithm", reducing design turnaround times by 70% (USPTO Patent: US10098709B1).</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Early Career</div>
+            <div class="job-desc" style="margin-top: 0.2rem;">
+                <strong>Novartis — Digital Marketing Manager</strong><br>
+                Led digital engagement initiatives for healthcare products.
             </div>
-            <ul>
-                <li><strong>Novartis:</strong> Digital Marketing Manager (2016) | <strong>Geometric / Wipro / VEM:</strong> Software Engineering Roles (2005-2011)</li>
-            </ul>
+            <div class="job-desc" style="margin-top: 0.4rem;">
+                <strong>Geometric Ltd — Senior Business Analyst</strong><br>
+                Co-invented a patented optimization algorithm that reduced engineering design turnaround time by <strong>70%</strong>.
+            </div>
+            <div class="job-desc" style="margin-top: 0.4rem;">
+                <strong>Earlier Engineering Roles</strong><br>
+                Software engineering positions at Wipro and VEM Technologies, building enterprise software systems across manufacturing and engineering domains.
+            </div>
         </div>
 
-        <!-- Education -->
-        <h2 class="section-header">Education</h2>
-        <div class="education-item">
-            <span>PGP in Management, <strong>Indian School of Business (ISB)</strong></span>
-            <span class="job-date">Apr 2015 - Apr 2016</span>
-        </div>
-        <div class="education-item">
-            <span>B.Tech in Computer Science, <strong>MGIT, Hyderabad</strong></span>
-            <span class="job-date">Sep 2001 - Apr 2005</span>
+        <div class="two-col">
+            <div>
+                <!-- Education -->
+                <h2 class="section-header">Education</h2>
+                <div class="education-item">
+                    <strong>Indian School of Business (ISB)</strong><br>
+                    PGP in Management
+                </div>
+                <div class="education-item">
+                    <strong>Mahatma Gandhi Institute of Technology</strong><br>
+                    B.Tech, Computer Science
+                </div>
+            </div>
+            
+            <div>
+                <!-- Patents & Certifications -->
+                <h2 class="section-header">Patents & Certifications</h2>
+                <div class="patent-item">
+                    <strong>Patents</strong>
+                    <ul style="padding-left: 1.2rem; margin-top: 0.2rem;">
+                        <li>Intelligent logistics prioritization (Patent Filed)</li>
+                        <li>USPTO Patent US10098709B1 – Constrained Optimization Algorithm</li>
+                    </ul>
+                </div>
+                <div class="patent-item" style="margin-top: 0.5rem;">
+                    <strong>AI Certifications</strong><br>
+                    Hugging Face AI Agents &bull; Microsoft AI PM Challenge &bull; Deep Learning Specialization
+                </div>
+            </div>
         </div>
 
-        <!-- Certifications & Additional Info -->
-        <h2 class="section-header">Certifications & Hobbies</h2>
-        <div class="certs-hobbies">
-            <div style="margin-bottom: 0.3rem;"><strong>AI Certifications:</strong> Hugging Face AI Agents Fundamentals | Microsoft AI PM Challenge | Coursera Deep Learning</div>
-            <div><strong>Hobbies:</strong> High-altitude Himalayan trekker (15,000ft+) | PADI Open-Water Diver | Cricket</div>
+        <!-- Beyond Work -->
+        <h2 class="section-header">Beyond Work</h2>
+        <div style="text-align: center;">
+            High-altitude Himalayan Trekker (15,000+ ft) &bull; PADI Open Water Diver &bull; Cricket
         </div>
 
     </div>
